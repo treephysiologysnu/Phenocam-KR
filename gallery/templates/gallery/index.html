@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'gallery/style.css' %}" type="text/css"/>
+</head>
+<body>
+{% for key, value in site_list.items %}
+  <div class="gallery">
+    <a target="_blank" href="/sites/{{ key }}">
+      <img src="/{{ value }}" alt="a" width="600" height="400">
+    </a>
+    <div class="name">{{ key }}</div>
+  </div>
+{% endfor %}
+
+</body>
+</html>
