@@ -5,3 +5,4 @@ db.sqlite3
 /.static_root
 uwsgi_params
 /mysite/settings.py
+/venv

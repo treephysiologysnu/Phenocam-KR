@@ -1,12 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
+<meta content="text/html; charset=euc-kr">
+<title>HTML5</title>
+<style type="text/css">
+    body {
+        text-align: center;
+        color: #000;
+        width: 900px;
+    }
+    div#wapper {
+        width: 1200px;
+        text-align: left;
+        min-height: 100px;
+        margin: 0 auto;
+    }
+    header, footer, nav, aside {
+        border: 1px solid #999;
+        margin: 5px;
+        padding: 10px;
+    }
+    section {
+        border: 1px solid #999;
+        margin: 5px;
+        padding: 10px;
+        float: left;
+        height: 200px;
+		margin-bottom: 10px
+        width: 604px;
+    }
+    article {
+        width: 90%;
+        margin: 20px;
+        background-color: #999;
+    }
+
+	#header {
+        	height: 50px;
+	        margin-bottom: 100px
+	        padding: 10px; /*20px;*/
+	        font-size: 20px;
+	        background-repeat:no-repeat;
+	        vertical-align:text-top;
+	}
+	#header h1 { margin-left: 100px; }
+	#navbar {
+			margin-top:20px;
+	        float: left;
+	        width: 1000px;
+	        background-color: #46494f;
+	}
+	#navbar ul {
+	        margin: 0 50px;
+	        padding: 0;
+	}
+	#navbar ul li {
+	        list-style-type: none;
+	        display: inline;
+	}
+	#navbar li a {
+	        display: block;
+	        float: left;
+	        padding: 10px 90px;
+	        color: #fff;
+	        text-decoration: none;
+	        border-left: 1px solid #fff;
+	        border-right: 1px solid #fff;
+	}
+	#navbar li a:hover { background-color: #6b778e; }
+	#navbar a.active { background-color: #6b778e; }
+	.content {
+		width:1000px;
+		height: 700px;
+		position:relative;
+		float: left;
+
+		display: inline-block;
+		margin-left:1px;
+		margin-top:20px;
+	}
+	.lat_image_frame {
+		text-align: left;
+		position:relative;
+		float: left;
+		margin-left: 20px
+		width:140%;
+		float:left;
+		left:9px;
+		top:1px;
+		border-radius:5px;
+  		box-shadow:3px 3px 3px 3px #999;
+	}
+	.info_frame {
+		border: 1px #74748c;
+		background-color: #e8e8ed;
+		width:40%;
+		height: 190px;
+		border-radius:5px;
+  		box-shadow:3px 3px 3px 3px #999;
+		position:absolute;
+		right:15px;
+	}
+	.info_frame:hover {
+		opacity: 0.9;
+		box-shadow:400px 0 0 0 rgba(0,0,0,0.05) inset;
+	}
+	.graph {
+#		background-color: green;
+		position:absolute;
+		top:670px;
+		border:1px black;
+		border-radius:5px;
+  		box-shadow:3px 3px 3px 3px #999;
+	}
+	#google_map {
+		position: relative;
+		top:40px;
+		border-radius:5px;
+  		box-shadow:3px 3px 3px 3px #999;
+	}
+	#map {
+		height: 400px;
+        width: 100%
+	}
+	.hist_image_frame {
+		position: relative;
+		top:20px;
+		left:10px;
+
+		width:560px;
+		float:left;
+		border:1px black;
+		border-radius:5px;
+  		box-shadow:3px 3px 3px 3px #999;
+	}
+    footer {
+        height: 78px;
+        width: 980px;
+        background-color: white;
+        position: absolute;
+        top:1300px;
+        clear: both;
+        border-radius:5px;
+  		box-shadow:3px 3px 3px 3px #999;
+    }
+</style>
+
 </head>
 <body>
-    <h1>
-        {{ site_name }}
-        {{ lat }}
-        {{ long }}
-    </h1>
+    <div id="wapper">
+        <!--헤더시작-->
+        <div id="header">
+        	<a href="http://hosting01.snu.ac.kr/~treephys/">
+        	<img src="http://hosting01.snu.ac.kr/~treephys/files/attach/images/176/af2246f40387482c818a837682427e5f.png" alt="Forest Ecophysiology Laboratory" href="http://hosting01.snu.ac.kr/~treephys/" style="float: left; margin-left: 8px; margin-right: 8px; box-shadow:1px 1px 0px 0px #999;"/>
+        	</a>
+      		<h1 style="font-family:  'Karla';font-size:55px;"><strong>&nbsp;&nbsp;Korea Phenocam Network</strong></h1>
+    	</div>
+        <!--네비게이션-->
+	    <div id="navbar">
+	      <ul>
+	        <li>
+	          <a id="first" class="inactive" href="/webcam/about/">About</a>
+	        </li>
+	        <li>
+	          <a class="active" href="/webcam/gallery/">Gallery</a>
+	        </li>
+	        <li>
+	          <a class="inactive" href="/webcam/network/map/">Map</a>
+	        </li>
+	        <li>
+	          <a class="inactive" href="/webcam/network/download/">Data</a>
+	        </li>
+	      </ul>
+	    </div><!-- /navbar -->
+        <!--콘텐츠부분-->
+    </div>
+	<div class="content">
+		<div class = "lat_image_frame">
+	     	<h2> {{ site_name }}</h2>
+	     	<img src="https://github.com/treephysiologysnu/BusArrivalEstimator/blob/master/picture.jpg?raw=true" alt="{{ site_name }}" style="width:533px; height:433px;position:relative;margin-left: 10px;margin-right: 10px"/>
+		</div>
+		<div class="hist_image_frame">
+			<img src="https://phenocam.sr.unh.edu/data/archive/grandteton/2018/06/grandteton_2018_06_11_120009.jpg" style="width:133px"/>
+			<img src="https://phenocam.sr.unh.edu/data/archive/grandteton/2018/06/grandteton_2018_06_11_120009.jpg" style="width:133px"/>
+			<img src="https://phenocam.sr.unh.edu/data/archive/grandteton/2018/06/grandteton_2018_06_11_120009.jpg" style="width:133px"/>
+			<img src="https://phenocam.sr.unh.edu/data/archive/grandteton/2018/06/grandteton_2018_06_11_120009.jpg" style="width:133px"/>
+
+		</div>
+	    <div class="info_frame">
+	        <dl class="site_info">
+	           <dt id="info"><h3>Site Information</h3></dt>
+	           <dt class="site">Location: {{ location }}</dt>
+	           <dt class="site">Start date: {{ start_date }}</dt>
+	           <dt class="site">Tree species: {{ species }}</dt>
+	           <dt class="site">Coordinates: {{ lat }}, {{ long }}</dt>
+	           <dt class="site">Camera: {{ camera }}</dt>
+	        </dl>
+	        <div id = "google_map">
+				<div id="map"></div>
+				    <script>
+				      function initMap() {
+				        var pos = {lat: {{ lat }}, lng: {{ long }}};
+				        var map = new google.maps.Map(document.getElementById('map'), {
+				          zoom: 17,
+				          center: pos,
+				mapTypeId: 'satellite'
+				        });
+				        var marker = new google.maps.Marker({
+				          position: pos,
+				          map: map
+				        });
+				      }
+				    </script>
+				    <script async defer
+				    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPNbq97Wmqq4TD0N4y22iEGxnntfnKfKg&callback=initMap&language=en">
+				    </script>
+			</div>
+	    </div>
+        <div class="graph">
+        	<h4>Timeseries Plot</h4>
+        	<iframe classe="graph" src="http://european-webcam-network.net/graph.php?sitename=AT-Neu" style="width:1000px; height:370px;"></iframe>
+        </div>
+	 </div>
+        <footer>
+        	<a href="http://hosting01.snu.ac.kr/~treephys/">
+	      <img src="http://hosting01.snu.ac.kr/~treephys/files/attach/images/176/af2246f40387482c818a837682427e5f.png"  alt="Forest Ecophysiology Laboratory" style="float: left; margin-left: 8px; margin-right: 8px;"/>
+	      &copy; 2018
+	      <a href="http://www.snu.ac.kr/">Seoul National University</a>
+	      <ul>
+	        <li>
+	        	Seoul National University, Building 200, 7205, 1 Gwanak-ro, Gwanak-gu, Seoul 08826 <br/> TEL. 82-2-880-4761 / FAX. 82-2-873-3560
+	        </li>
+	      </ul>
+		</footer>
+    </div>
 </body>
 </html>
